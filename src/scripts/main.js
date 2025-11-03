@@ -33,7 +33,7 @@ function createTree(element, data) {
     if (
       typeof data[key] === 'object' &&
       data[key] !== null &&
-      Object.keys(data[key]).length > 0
+      Object.keys(data[key]).length !== 0
     ) {
       createTree(elementLi, data[key]);
     }
