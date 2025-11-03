@@ -35,15 +35,11 @@ function createTree(element, data) {
       data[key] !== null &&
       Object.keys(data[key]).length > 0
     ) {
-      const elementUl2 = createTree(elementLi, data[key]);
-
-      elementLi.appendChild(elementUl2);
+      createTree(elementLi, data[key]);
     }
   }
 
-  return elementUl;
+  element.appendChild(elementUl);
 }
 
-const treeStructure = createTree(tree, food);
-
-tree.appendChild(treeStructure);
+createTree(tree, food);
